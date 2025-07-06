@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock Paper Scissors</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .choice-btn {
+        width: 100%;
+        text-align: center;
+        transition: transform 0.3s;
+      }
+
+      .choice-btn:active {
+        transform: scale(0.95);
+      }
+
+      .winner {
+        box-shadow: 0 0 0 4px rgba(74, 222, 128, 0.75);
+      }
+
+      .loser {
+        box-shadow: 0 0 0 4px rgba(248, 113, 113, 0.75);
+      }
+
+      .draw {
+        box-shadow: 0 0 0 4px rgba(250, 204, 21, 0.75);
+      }
+    </style>
+  </head>
+  <body class="bg-gradient-to-br from-indigo-900 to-purple-900 text-white">
+    <div
+      id="app"
+      class="min-h-screen flex flex-col items-center justify-center p-4"
+    >
+      <h1
+        class="text-4xl md:text-6xl font-bold mb-8 text-center text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600"
+      >
+        Rock Paper Scissors
+      </h1>
+
+      <div
+        class="score-board bg-white/10 backdrop-blur-md p-6 rounded-xl mb-8 w-full max-w-md"
+      >
+        <div class="flex justify-between items-center">
+          <div class="text-center">
+            <p class="text-lg opacity-75">You</p>
+            <p id="player-score" class="text-3xl font-bold">0</p>
+          </div>
+          <div class="text-4xl font-bold px-4">:</div>
+          <div class="text-center">
+            <p class="text-lg opacity-75">Computer</p>
+            <p id="computer-score" class="text-3xl font-bold">0</p>
+          </div>
+        </div>
+      </div>
+
+      <div
+        id="result"
+        class="text-2xl md:text-3xl font-bold mb-8 h-8 text-center min-h-[4rem]"
+      ></div>
+
+      <div
+        class="choices grid grid-cols-3 gap-4 md:gap-8 w-full max-w-2xl mb-8"
+      >
+        <button class="choice-btn" data-choice="rock">
+          <div
+            class="bg-white/10 hover:bg-white/20 backdrop-blur-md rounded-xl p-6 md:p-8 transition-all duration-300 transform hover:scale-105"
+          >
+            <span class="text-4xl md:text-6xl">🪨</span>
+          </div>
+        </button>
+        <button class="choice-btn" data-choice="paper">
+          <div
+            class="bg-white/10 hover:bg-white/20 backdrop-blur-md rounded-xl p-6 md:p-8 transition-all duration-300 transform hover:scale-105"
+          >
+            <span class="text-4xl md:text-6xl">📄</span>
+          </div>
+        </button>
+        <button class="choice-btn" data-choice="scissors">
+          <div
+            class="bg-white/10 hover:bg-white/20 backdrop-blur-md rounded-xl p-6 md:p-8 transition-all duration-300 transform hover:scale-105"
+          >
+            <span class="text-4xl md:text-6xl">✂️</span>
+          </div>
+        </button>
+      </div>
+
+      <button
+        id="reset"
+        class="bg-white/10 hover:bg-white/20 backdrop-blur-md px-6 py-3 rounded-xl transition-all duration-300 font-semibold"
+      >
+        Reset Game
+      </button>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
